@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Introduction to Computers Lab Session</title>
+<meta name="description" content="A jQuery library for modern HTML presentations">
+<meta name="author" content="Caleb Troughton">
+<meta name="viewport" content="width=1024, user-scalable=no">
+<!-- Core and extension CSS files -->
+<link rel="stylesheet" href="../deck.js/core/deck.core.css">
+<link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+<link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+<link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+<link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+<!-- Theme CSS files (menu swaps these out) -->
+<!-- <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0.css"> -->
+<link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/swiss.css">
+<link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/horizontal-slide.css">
+<script src="../deck.js/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+</div><div class="slide" id="index">
+
+<h1>Lab4 Linux &amp; Commands</h1>
+
+</div><div class="slide" id="outline">
+
+<h2>Outline</h2>
+
+<ul>
+<li><h3>Shell</h3>
+<ul>
+<li>Wildcard</li>
+<li>Command Substituion</li>
+<li><code>alias</code></li>
+</ul></li>
+<li><h3>Standard I/O &amp; pipeline</h3></li>
+<li><h3>Commands</h3></li>
+</ul>
+
+</div><div class="slide" id="shell">
+
+<h2>Shell</h2>
+
+<ul>
+<li><p>Interface between user and linux kernel</p></li>
+<li><p>Many kinds of shells</p>
+
+<ul>
+<li>bash</li>
+<li>tcsh</li>
+<li>csh</li>
+<li>ksh</li>
+<li>zsh</li>
+<li>fish</li>
+<li>...</li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="shell2">
+
+<h2>Shell</h2>
+
+<ul>
+<li><p>What shell you are using</p>
+
+<pre><code>$ echo $SHELL
+</code></pre></li>
+<li><p>Change shell</p>
+
+<pre><code>$ chsh
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="wildcard">
+
+<h2>Wildcard</h2>
+
+<ul>
+<li><p>Wildcards will be expand before executing the command</p></li>
+<li><p>List all txt files</p>
+
+<pre><code>$ ls *.txt
+</code></pre>
+
+<p>will expand to</p>
+
+<pre><code>$ ls a.txt b.txt c.txt
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="command-substitution">
+
+<h2>Command Substituion</h2>
+
+<ul>
+<li><p>Shell replaces the backquotes (<code>``</code>) with the output of the command inside the backquotes</p></li>
+<li><p>Create file with date</p>
+
+<pre><code>$ touch `date +%F`.txt
+$ ls
+2011-10-10.txt
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="alias">
+
+<h2>alias</h2>
+
+<ul>
+<li><p>Replace a long command to a short name</p></li>
+<li><p>Some examples (using <code>bash</code>)</p>
+
+<ul>
+<li><code>alias ll="ls -l"</code></li>
+<li><code>alias la="ls -a"</code></li>
+<li><code>alias rm="rm -i"</code></li>
+<li><code>alias cp="cp -i"</code></li>
+<li><code>alias ptt="ssh bbs@ptt.cc"</code></li>
+<li><code>alias csie="ssh r00922006@linux15.csie.org"</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="io">
+
+<h2>Standard I/O</h2>
+
+<ul>
+<li><p>Standard input (stdin): keyboard</p></li>
+<li><p>Standard output (stdout): screen</p></li>
+<li><p>Standard error output (stderr): screen</p></li>
+<li><p>Most UNIX tools use stdin and stdout.</p></li>
+<li><p>Standard I/O allows you to redirect I/O away from your terminal to a file.</p></li>
+</ul>
+
+</div><div class="slide" id="redirection">
+
+<h2>I/O Redirection &amp; Pipeline</h2>
+
+<ul>
+<li><p>Redirect stdout to file</p>
+
+<pre><code>$ command &gt; file
+</code></pre></li>
+<li><p>Redirect stderr to file</p>
+
+<pre><code>$ command 2&gt; file
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="redirection2">
+
+<h2>I/O Redirection &amp; Pipeline</h2>
+
+<ul>
+<li><p>Append stdout to file</p>
+
+<pre><code>$ command &gt;&gt; file
+</code></pre></li>
+<li><p>Pipe stdout to next Command</p>
+
+<pre><code>$ command | command
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="commands">
+
+<h2>Commands</h2>
+
+<ul>
+<li><h3><code>date</code></h3></li>
+<li><h3><code>tar</code></h3></li>
+<li><h3><code>head</code>, <code>tail</code></h3></li>
+<li><h3><code>du</code></h3></li>
+<li><h3><code>top</code></h3></li>
+<li><h3><code>find</code></h3></li>
+<li><h3><code>grep</code></h3></li>
+</ul>
+
+</div><div class="slide" id="date">
+
+<h2>date</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>$ date [+output_format]
+</code></pre></li>
+<li><h3>Some examples</h3>
+
+<pre><code>$ date
+一 10月 10 14:52:53 CST 2011
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="date2">
+
+<h2>date</h2>
+
+<ul>
+<li><h3>Some examples</h3>
+
+<pre><code>$ date +%Y-%m-%d
+2011-10-10
+
+
+$ date "+%Hhr, %Mmin, %Ssec"
+14hr, 56min, 07sec
+</code></pre></li>
+<li><h3>More Information</h3>
+
+<pre><code>$ man date
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="tar">
+
+<h2>tar</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>$ tar [option] [file]
+</code></pre></li>
+<li><h3>Option</h3>
+
+<ul>
+<li><code>c</code>, create tar file</li>
+<li><code>x</code>, extract tar file</li>
+<li><code>f</code>, filename</li>
+<li><code>v</code>, verbose</li>
+<li><code>z</code>, compress with gzip</li>
+<li><code>j</code>, compress with bzip2</li>
+</ul></li>
+<li><h3>On Windows</h3>
+
+<p>You can use <a href="http://www.7-zip.org/">7-Zip</a></p></li>
+</ul>
+
+</div><div class="slide" id="tar2">
+
+<h2>tar</h2>
+
+<pre><code>$ ls
+dir/
+
+$ ls dir
+A  demo  file
+
+$ tar cf dir.tar dir
+$ ls
+dir/  dir.tar
+
+$ mkdir extract
+$ tar xf dir.tar -C extract/
+$ ls extract/
+dir/
+</code></pre>
+
+</div><div class="slide" id="head">
+
+<h2>head</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>head [option] [file]
+</code></pre></li>
+<li><p>Print first n lines/bytes of file (default 10 lines)</p></li>
+</ul>
+
+</div><div class="slide" id="head2">
+
+<h2>head</h2>
+
+<ul>
+<li><p>First 5 lines</p>
+
+<pre><code>$ head -n 5 filename
+</code></pre></li>
+<li><p>First 5 bytes</p>
+
+<pre><code>$ head -c 5 filename
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="tail">
+
+<h2>tail</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>tail [option] [file]
+</code></pre></li>
+<li><p>Just like <code>head</code></p></li>
+<li><code>-F</code> to output appended data as the file grows</li>
+</ul>
+
+</div><div class="slide" id="du">
+
+<h2>du - disk usage</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>du [option] [file]
+</code></pre></li>
+<li><h3>Option</h3>
+
+<ul>
+<li><code>-h</code>, human readable</li>
+<li><code>--max-depth=n</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="find">
+
+<h2>find</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>find [path] [option] [action]
+</code></pre></li>
+<li><h3>Option</h3>
+
+<ul>
+<li><code>-name</code></li>
+<li><code>-user</code></li>
+<li><code>-group</code></li>
+<li><code>-mtime</code>, <code>-atime</code>, <code>-ctime</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="find2">
+
+<h2>find</h2>
+
+<ul>
+<li><h3>Action</h3>
+
+<ul>
+<li><code>-exec ... {} \;</code></li>
+</ul></li>
+<li><p>Powerful command to find files!</p></li>
+</ul>
+
+</div><div class="slide" id="find3">
+
+<h2>find</h2>
+
+<ul>
+<li><p>Find all txt file</p>
+
+<pre><code>$ find . -name "*.txt"
+</code></pre></li>
+<li><p>Find all txt file and print content</p>
+
+<pre><code>$ find . -name "*.txt" -exec cat {} \;
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="grep">
+
+<h2>grep</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>$ grep [option] pattern [file]
+</code></pre></li>
+<li><h3>Option</h3>
+
+<ul>
+<li><code>-i</code>, ignore case</li>
+<li><code>-n</code>, show line number</li>
+<li><code>--color=auto</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="top">
+
+<h2>top</h2>
+
+<ul>
+<li><h3>Usage</h3>
+
+<pre><code>$ top
+</code></pre></li>
+<li><p>Display tasks information</p></li>
+</ul>
+
+</div><div class="slide" id="assignment">
+
+<h1>Assignment 3</h1>
+
+</div><div class="slide" id="assignment-q">
+
+<h2>Assignment 3</h2>
+
+<h3>Question</h3>
+
+<ul>
+<li><p>Write down the <strong>one-line</strong> command you use to solve the following problem, and explain every part of your command briefly.</p>
+
+<ol>
+<li>Find out your classmates (b00902xxx) using the same machine with you and output their id to <code>who.txt</code></li>
+<li>Remove all file named <code>tmpfile</code> in your computer</li>
+<li>Find out the ip address of your machine and output the answer to <code>ip.txt</code></li>
+</ol></li>
+</ul>
+
+<h3>Hint</h3>
+
+<ul>
+<li><code>awk</code>, <code>who</code>, <code>ifconfig</code>, <code>cut</code></li>
+</ul>
+
+</div><div class="slide" id="assignment-submit">
+
+<h2>Assignment 3</h2>
+
+<h3>Submition</h3>
+
+<ul>
+<li><p>Mail your report with <strong>PDF format</strong></p></li>
+<li><p>to <a href="&#x6D;&#x61;&#x69;&#108;&#116;&#111;:&#x69;&#110;&#116;&#x72;&#111;&#x63;s&#64;&#100;m&#x34;&#x2E;&#116;&#x77;">&#x69;&#110;&#116;&#x72;&#111;&#x63;s&#64;&#100;m&#x34;&#x2E;&#116;&#x77;</a></p></li>
+<li><p>with subject <em><strong>[Assignment 3] b00902xxx</strong></em></p></li>
+</ul>
+
+<h3>Due date</h3>
+
+<ul>
+<li>2011/10/16 (日) 23:59</li>
+</ul>
+
+</div>
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+<p class="deck-status">
+    Meng-Han Lee (dm4)&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="../deck.js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../deck.js/jquery-1.6.1.min.js">\x3C/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script> $(function() {$.deck('.slide');}); </script>
+</body>
+</html>
