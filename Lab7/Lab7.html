@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Introduction to Computers Lab Session</title>
+<meta name="description" content="A jQuery library for modern HTML presentations">
+<meta name="author" content="Caleb Troughton">
+<meta name="viewport" content="width=1024, user-scalable=no">
+<!-- Core and extension CSS files -->
+<link rel="stylesheet" href="../deck.js/core/deck.core.css">
+<link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+<link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+<link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+<link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+<!-- Theme CSS files (menu swaps these out) -->
+<!-- <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0.css"> -->
+<link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/swiss.css">
+<link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/horizontal-slide.css">
+<script src="../deck.js/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+</div><div class="slide" id="index">
+
+<h1>Lab7 Advanced Vim Tutorial</h1>
+
+</div><div class="slide" id="real-man">
+
+<p><img style="position:absolute;top:50%;left:50%;margin:-177px 0 0 -295px;" src="img/man.png"></img></p>
+
+</div><div class="slide" id="outline">
+
+<h2>Outline</h2>
+
+<ul>
+<li><h3>Move cursor</h3></li>
+<li><h3>.vimrc, .vim</h3></li>
+<li><h3>Key Mapping</h3></li>
+<li><h3>Macro in Vim</h3></li>
+<li><h3>Vim Plugins</h3></li>
+</ul>
+
+</div><div class="slide" id="move">
+
+<h2>Move cursor</h2>
+
+<ul>
+<li><h3>You may know...</h3>
+<ul>
+<li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code></li>
+</ul></li>
+<li><h3>or more...</h3>
+<ul>
+<li><code>0</code>, <code>$</code>, <code>H</code>, <code>M</code>, <code>L</code>, <code>gg</code>, <code>G</code></li>
+</ul></li>
+<li><h3>with number...</h3>
+<ul>
+<li><code>10G</code></li>
+<li><code>3j</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="move-2">
+
+<h2>Move cursor</h2>
+
+<ul>
+<li><h3>Move between words</h3>
+<ul>
+<li><code>w</code>, <code>W</code>, <code>b</code>, <code>B</code></li>
+</ul></li>
+<li><h3>Move to characters</h3>
+<ul>
+<li><code>f</code>, <code>F</code>, <code>t</code>, <code>T</code></li>
+</ul></li>
+<li><h3>with number...</h3>
+<ul>
+<li><code>3w</code></li>
+<li><code>2fc</code></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="vimrc">
+
+<h2>The <code>.vimrc</code> file</h2>
+
+<ul>
+<li><p>Contains initialization commands</p></li>
+<li><p><code>_vimrc</code> in Windows</p></li>
+</ul>
+
+</div><div class="slide" id="dotvim">
+
+<h2>The <code>.vim</code> directory</h2>
+
+<ul>
+<li>Color theme</li>
+<li>Plugins</li>
+<li>Syntax highlight</li>
+<li>Autoload script</li>
+<li>...</li>
+</ul>
+
+</div><div class="slide" id="keymap">
+
+<h2>Key Mapping</h2>
+
+<ul>
+<li><code>map</code></li>
+<li><code>imap</code> for insert mode</li>
+<li><code>nmap</code> for normal mode</li>
+<li><p><code>vmap</code> for visual mode</p></li>
+<li><h4>My favorite!</h4>
+
+<pre><code>nmap ; :
+vmap ; :
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="keymap-2">
+
+<h2>Key Mapping</h2>
+
+<ul>
+<li><p>More</p>
+
+<pre><code>nmap &lt;C-L&gt; :set nu!&lt;CR&gt;
+nmap ,ev   :tabnew $MYVIMRC&lt;CR&gt;
+
+
+nmap &lt;C-J&gt; ddp
+nmap &lt;C-K&gt; ddkP
+
+
+nmap &lt;F9&gt; :w&lt;CR&gt;:!gcc % &amp;&amp; ./a.out&lt;CR&gt;
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="macro">
+
+<h2>Macro in Vim</h2>
+
+<ul>
+<li><h3>Record &amp; Execute</h3>
+<ul>
+<li>Record typed characters into register {0-9a-zA-Z"}
+<ul>
+<li><code>q[register]</code></li>
+</ul></li>
+<li>Stop recoding
+<ul>
+<li><code>q</code></li>
+</ul></li>
+<li>Execute the contents of register 
+<ul>
+<li><code>@[register]</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="macro-2">
+
+<h2>Macro in Vim</h2>
+
+<ul>
+<li><h3>Example</h3>
+<ul>
+<li>Add titles to paragraphs</li>
+<li>Modify titles to paragraphs</li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="plugin">
+
+<h2>Vim Plugins</h2>
+
+<ul>
+<li><h4>Vim can be extended through plugins!</h4></li>
+<li><h3>Install</h3>
+<ul>
+<li>Unzip the archive into your <code>~/.vim</code> directory. </li>
+<li>You can also use <a href="http://www.vim.org/scripts/script.php?script_id=2332">pathogen</a> or <a href="https://github.com/gmarik/vundle">vundle</a></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="plugin-2">
+
+<h2>Vim Plugins</h2>
+
+<ul>
+<li><h4>My favorites!</h4>
+<ul>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1658">NERD tree</a></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1879">AutoComplPop</a></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=2540">snipMate</a></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1697">surround</a></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=3526">EasyMotion</a></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=2981">ZenCoding</a></li>
+<li>...</li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="nerdtree">
+
+<h2>NERD tree</h2>
+
+<ul>
+<li><p>The <a href="http://www.vim.org/scripts/script.php?script_id=1658">NERD tree</a> allows you to explore your filesystem and to open files and 
+directories</p></li>
+<li><p>Key mapping to toggle <a href="http://www.vim.org/scripts/script.php?script_id=1658">NERD tree</a></p>
+
+<pre><code>nmap  ,n  :NERDTreeToggle&lt;CR&gt;
+</code></pre></li>
+<li><p><a href="http://www.vim.org/scripts/script.php?script_id=1658">Link</a></p></li>
+</ul>
+
+</div><div class="slide" id="nerdtree-2">
+
+<h2>NERD tree</h2>
+
+<p><img src="img/nerdtree.png" alt="nerdtree" title="" /></p>
+
+</div><div class="slide" id="autocomplpop">
+
+<h2>AutoComplPop</h2>
+
+<ul>
+<li>Automatically opens popup menu for completions</li>
+<li>Sentences completions</li>
+<li>Code completions
+<ul>
+<li>Functions</li>
+<li>Methods</li>
+<li>Variables</li>
+</ul></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1879">Link</a></li>
+</ul>
+
+</div><div class="slide" id="snipmate">
+
+<h2>snipMate</h2>
+
+<ul>
+<li><p>TextMate-style snippets for Vim</p></li>
+<li><p><a href="http://www.vim.org/scripts/script.php?script_id=2540">Link</a></p></li>
+</ul>
+
+</div><div class="slide" id="snipmate-2">
+
+<h2>snipMate</h2>
+
+<p><iframe src="http://player.vimeo.com/video/3535418?title=0&amp;byline=0&amp;portrait=0" width="800" height="450" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a href="http://vimeo.com/3535418">snipMate.vim Introductory Screencast</a> from <a href="http://vimeo.com/user1404868">Michael Sanders</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
+
+</div><div class="slide" id="surround">
+
+<h2>surround</h2>
+
+<ul>
+<li>Surroundings:
+<ul>
+<li>parentheses</li>
+<li>brackets</li>
+<li>quotes</li>
+<li>XML tags</li>
+<li>...</li>
+</ul></li>
+<li>Delete surrouding
+<ul>
+<li><code>ds[surrouding]</code></li>
+</ul></li>
+<li>Change surrouding
+<ul>
+<li><code>cs[before][after]</code></li>
+</ul></li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1697">Link</a></li>
+</ul>
+
+</div><div class="slide" id="easymotion">
+
+<h2>EasyMotion</h2>
+
+<ul>
+<li>Simplify the movements in Vim</li>
+<li><code>&lt;Leader&gt;</code> to trigger <a href="http://www.vim.org/scripts/script.php?script_id=3526">EasyMotion</a></li>
+<li><p><code>&lt;Leader&gt;</code> is <code>\</code> in Vim by default</p>
+
+<pre><code>&lt;Leader&gt;w
+&lt;Leader&gt;b
+&lt;Leader&gt;f
+</code></pre></li>
+<li><p><a href="http://www.vim.org/scripts/script.php?script_id=3526">Link</a></p></li>
+</ul>
+
+</div><div class="slide" id="zencoding">
+
+<h2>Zen Coding</h2>
+
+<ul>
+<li><p><a href="http://code.google.com/p/zen-coding/">Zen Coding</a></p></li>
+<li><p><a href="http://www.vim.org/scripts/script.php?script_id=2981">Zen Coding for Vim</a> has its own ZC engine implementation.</p></li>
+<li><p>A powerful abbreviation engine for HTML/CSS</p></li>
+</ul>
+
+</div><div class="slide" id="zencoding-2">
+
+<h2>Zen Coding</h2>
+
+<pre><code>div#page&gt;div.logo+ul&gt;li#$$*3&gt;a
+</code></pre>
+
+<p>can be expanded into:</p>
+
+<pre><code>&lt;div id="page"&gt;
+    &lt;div class="logo"&gt;&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li id="01"&gt;
+            &lt;a href=""&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li id="02"&gt;
+            &lt;a href=""&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li id="03"&gt;
+            &lt;a href=""&gt;&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+</div><div class="slide" id="what-could-vim-do">
+
+<h2>What can we do with Vim?</h2>
+
+<ul>
+<li class="slide"> Edit text file</li>
+<li class="slide"><h4>Coding!</h4></li>
+<li class="slide"> HTML/CSS</li>
+<li class="slide"><h4>Tetris?</h4></li>
+<li class="slide"><h4>Make slides?</h4></li>
+</ul>
+
+</div><div class="slide" id="making-slides-with-vim">
+
+<h2>Making slides with Vim</h2>
+
+<ul>
+<li><h4>deck.js + Markdown + guard !</h4>
+<img src="img/nerdtree.png" alt="nerdtree" title="" /></li>
+</ul>
+
+</div><div class="slide" id="making-slides-with-vim-2">
+
+<h2>Making slides with Vim</h2>
+
+</div><div class="slide" id="end">
+
+<h1>End</h1>
+
+</div>
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+<p class="deck-status">
+    Meng-Han Lee (dm4)&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="../deck.js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../deck.js/jquery-1.6.1.min.js">\x3C/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script> $(function() {$.deck('.slide');}); </script>
+</body>
+</html>
