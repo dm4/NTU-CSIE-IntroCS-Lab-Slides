@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Introduction to Computers Lab Session</title>
+<meta name="description" content="A jQuery library for modern HTML presentations">
+<meta name="author" content="Caleb Troughton">
+<meta name="viewport" content="width=1024, user-scalable=no">
+<!-- Core and extension CSS files -->
+<link rel="stylesheet" href="../deck.js/core/deck.core.css">
+<link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+<link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+<link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+<link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+<!-- Theme CSS files (menu swaps these out) -->
+<!-- <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0.css"> -->
+<link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/swiss.css">
+<link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/horizontal-slide.css">
+<script src="../deck.js/modernizr.custom.js"></script>
+<style>
+    .note { display: none; }
+</style>
+</head>
+<body class="deck-container">
+</div><div class="slide" id="index">
+
+<h1>Lab10 Basic HTML &amp; CSS</h1>
+
+</div><div class="slide" id="html-2">
+
+<h1><span class="red">H</span>yper<span class="red">T</span>ext <span class="red">M</span>arkup <span class="red">L</span>anguage</h1>
+
+<p><style> span.red { color: red; } </style></p>
+
+</div><div class="slide" id="tag">
+
+<h1>&lt;html&gt; &lt;<span class="red">/</span>html&gt;</h1>
+
+</div><div class="slide" id="example">
+
+<h2>HTML</h2>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Hello, HTML&lt;/title&gt;
+    &lt;script src="jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, HTML&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;div class="content"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div><div class="slide" id="escape">
+
+<h2>Escape Characters</h2>
+
+<ul>
+<li><h3><code>&lt;</code></h3>
+
+<pre><code>&amp;lt;
+</code></pre></li>
+<li><h3><code>&gt;</code></h3>
+
+<pre><code>&amp;gt;
+</code></pre></li>
+<li><h3><code>&amp;</code></h3>
+
+<pre><code>&amp;amp;
+</code></pre></li>
+</ul>
+
+</div><div class="slide" id="element-1">
+
+<h2>Element</h2>
+
+<ul>
+<li><code>&lt;div&gt;</code> Block item</li>
+<li><code>&lt;span&gt;</code> Inline item</li>
+<li><code>&lt;br&gt;</code> Change line</li>
+<li><code>&lt;hr&gt;</code> Horizontal line</li>
+</ul>
+
+<hr>
+
+</div><div class="slide" id="element-2">
+
+<h2>Element</h2>
+
+<ul>
+<li><code>&lt;ul&gt;</code> , <code>&lt;ol&gt;</code> , <code>&lt;li&gt;</code> List items
+<ol>
+<li><code>&lt;ul&gt;</code> unordered list</li>
+<li><code>&lt;ol&gt;</code> ordered list</li>
+<li><code>&lt;li&gt;</code> list element</li>
+</ol></li>
+</ul>
+
+<div></div>
+
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;&amp;lt;ul&amp;gt; , &amp;lt;ol&amp;gt; , &amp;lt;li&amp;gt; List items&lt;/li&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&amp;lt;ul&amp;gt; unordered list&lt;/li&gt;
+        &lt;li&gt;&amp;lt;ol&amp;gt; ordered list&lt;/li&gt;
+        &lt;li&gt;&amp;lt;li&amp;gt; list element&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/ul&gt;
+</code></pre>
+
+</div><div class="slide" id="element-3">
+
+<h2>Element</h2>
+
+<ul>
+<li><p><code>&lt;a&gt;</code> Hyperlink</p>
+
+<ul>
+<li><p><a href="http://www.csie.ntu.edu.tw">CSIE</a></p>
+
+<pre><code>&lt;a href="http://www.csie.ntu.edu.tw"&gt;CSIE&lt;/a&gt;
+</code></pre></li>
+</ul></li>
+</ul>
+
+</div><div class="slide" id="element-4">
+
+<h2>Element</h2>
+
+<ul>
+<li><p><code>&lt;img&gt;</code> Image</p>
+
+<pre><code>&lt;img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_128.png"&gt;&lt;/img&gt;
+</code></pre></li>
+</ul>
+
+<p><img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_128.png" alt="HTML5" title="" /></p>
+
+</div><div class="slide" id="element-5">
+
+<h2>Element</h2>
+
+<ul>
+<li><code>&lt;form&gt;</code> , <code>&lt;input&gt;</code> , <code>&lt;select&gt;</code> , <code>&lt;textarea&gt;</code> User input field</li>
+<li><code>&lt;table&gt;</code> , <code>&lt;tr&gt;</code> , <code>&lt;td&gt;</code> Table data</li>
+<li><code>&lt;embed&gt;</code> Embed plugin</li>
+<li><code>&lt;style&gt;</code> CSS element</li>
+<li><code>&lt;script&gt;</code> Script element</li>
+</ul>
+
+</div><div class="slide" id="css">
+
+<h1>C S S</h1>
+
+</div><div class="slide" id="css-2">
+
+<h1><span class="red">C</span>ascading <span class="red">S</span>tyle <span class="red">S</span>heets</h1>
+
+</div><div class="slide" id="css-3">
+
+<h2>CSS</h2>
+
+<ul>
+<li><h3>Inline style</h3>
+inside the HTML document, style information on a single element, specified using the "style" attribute</li>
+</ul>
+
+<hr>
+
+<p><span style="color: red">H</span>ello</p>
+
+<pre><code>&lt;span sytle="color: red"&gt;H&lt;/span&gt;ello
+</code></pre>
+
+</div><div class="slide" id="css-4">
+
+<h2>CSS</h2>
+
+<ul>
+<li><h3>Embedded style</h3>
+blocks of CSS information inside the HTML itself</li>
+</ul>
+
+<hr>
+
+<p><style> .blue { color: blue; } </style>
+<span class="blue">H</span>ello</p>
+
+<pre><code>&lt;style&gt; .blue { color: blue; } &lt;/style&gt;
+&lt;span class="blue"&gt;H&lt;/span&gt;ello
+</code></pre>
+
+</div><div class="slide" id="css-5">
+
+<h2>CSS</h2>
+
+<ul>
+<li><h3>External style sheets</h3>
+a separate CSS file referenced from the document</li>
+</ul>
+
+<hr>
+
+<p><link rel="stylesheet" href="green.css">
+<span class="green">H</span>ello</p>
+
+<pre><code>&lt;link rel="stylesheet" href="green.css"&gt;
+&lt;span class="green"&gt;H&lt;/span&gt;ello
+</code></pre>
+
+</div><div class="slide" id="selector-1">
+
+<h2>CSS Selector</h2>
+
+<pre><code>selector {
+    property: value;
+    property: value;
+    ...
+}
+</code></pre>
+
+</div><div class="slide" id="selector-2">
+
+<h2>CSS Selector</h2>
+
+<h3>HTML tag</h3>
+
+<pre><code>h6 {
+    color: #FFF;
+    background: #333;
+}
+</code></pre>
+
+<div></div>
+
+<pre><code>&lt;h6&gt;Hello&lt;/h6&gt;
+</code></pre>
+
+<h6>Hello</h6>
+
+</div><div class="slide" id="selector-3">
+
+<h2>CSS Selector</h2>
+
+<h3>id selector</h3>
+
+<pre><code>#foo {
+    color: #FFF;
+    background: #999;
+}
+</code></pre>
+
+<div></div>
+
+<pre><code>&lt;span id="foo"&gt;Hello&lt;/span&gt;
+</code></pre>
+
+<p><span id="foo">Hello</span></p>
+
+</div><div class="slide" id="selector-4">
+
+<h2>CSS Selector</h2>
+
+<h3>class selector</h3>
+
+<pre><code>.highlight {
+    color: yellow;
+    background: black;
+}
+</code></pre>
+
+<div></div>
+
+<pre><code>&lt;span class="highlight"&gt;Hello&lt;/span&gt;
+</code></pre>
+
+<p><span class="highlight">Hello</span></p>
+
+</div><div class="slide" id="selector-5">
+
+<h2>CSS Selector</h2>
+
+<h3>attribute selector</h3>
+
+<pre><code>input[name="key"] {
+    color: blue;
+}
+</code></pre>
+
+<div></div>
+
+<pre><code>&lt;input name="key" type="text"&gt;&lt;/input&gt;
+</code></pre>
+
+<p><input name="key" type="text"></input></p>
+
+</div><div class="slide" id="selector-6">
+
+<h2>More CSS Selectors</h2>
+
+<ul>
+<li><h3><code>:hover</code></h3>
+
+<p>Pseudo-Class</p></li>
+<li><h3><code>:first-child</code></h3>
+
+<p>Pseudo-Element</p></li>
+<li><h3><code>,</code> <code>&gt;</code></h3>
+
+<p>Combinator</p></li>
+</ul>
+
+</div><div class="slide" id="ref">
+
+<h2>Reference</h2>
+
+<ul>
+<li><a href="http://www.w3schools.com/">http://www.w3schools.com/</a></li>
+<li><a href="Webapp.pdf">Webapp Development Tutorial by sodas</a></li>
+</ul>
+
+</div>
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+<p class="deck-status">
+    Meng-Han Lee (dm4)&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="../deck.js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../deck.js/jquery-1.6.1.min.js">\x3C/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script> $(function() {$.deck('.slide');}); </script>
+</body>
+</html>

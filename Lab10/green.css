@@ -1,0 +1,22 @@
+.green {
+    color: green;
+}
+
+.highlight {
+    color: yellow;
+    background: black;
+}
+
+#foo {
+    color: #FFF;
+    background: #999;
+}
+
+h6 {
+    color: #FFF;
+    background: #333;
+}
+
+input[name="key"] {
+    color: blue;
+}
